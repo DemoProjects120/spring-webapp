@@ -17,7 +17,7 @@
        <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" scope="singleton">
               <property name="database" value="MYSQL"/>
               <property name="databasePlatform" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
-
+              <property name="showSql" value="true"/>
        </bean>
 
        <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" scope="singleton">
@@ -25,6 +25,13 @@
               <property name="persistenceUnitName" value="persistanceUnit"/>
               <property name="packagesToScan" value="com.rootnext.webapp.models"/>
               <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
+              <property name="jpaProperties">
+                     <props>
+                            <prop key="hibernate.hbm2ddl.auto">update</prop>
+                            <prop key="hibernate.show_sql">true</prop>
+                            <prop key="hibernate.format_sql">false</prop>
+                     </props>
+              </property>
        </bean>
 
        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
@@ -32,6 +39,7 @@
        </bean>
 
        <bean id="exceptionTranslation" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
 
        <jpa:repositories base-package="com.rootnext.webapp.models.repositories"/>
 </beans>
