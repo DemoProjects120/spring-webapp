@@ -12,17 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by sanjoy on 7/7/15.
  */
 @RestController
-@RequestMapping("/api/product")
+@RequestMapping("api/")
 public class ProductController {
     @Autowired
     ProductRepository productRepository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/product", method = RequestMethod.GET)
     public Iterable<Product> list(){
         return productRepository.findAll();
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     public Product get(@PathVariable("id") Long id){
         return productRepository.findOne(id);
     }
