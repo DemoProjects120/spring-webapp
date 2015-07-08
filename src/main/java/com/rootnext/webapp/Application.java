@@ -1,15 +1,13 @@
 package com.rootnext.webapp;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 
 /**
  * Created by sanjoy on 7/7/15.
  */
-//@Configuration
-//@ComponentScan(basePackages = "com.rootnext.webapp")
-//@EnableJpaRepositories(basePackages = {"com.rootnext.webapp.models.repositories"})
-//@EnableWebMvc
+@Configuration
 public class Application {
 
 //    @Bean
