@@ -1,6 +1,6 @@
 package com.rootnext.webapp.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -11,7 +11,6 @@ import java.util.List;
  */
 @Entity
 @Table(name = "categories")
-@JsonIgnoreProperties({"products"})
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +18,7 @@ public class Category {
     @Column
     String name;
     @OneToMany(targetEntity = Product.class, mappedBy = "category")
+    @JsonManagedReference
     List<Product> products;
 
     public Category() {

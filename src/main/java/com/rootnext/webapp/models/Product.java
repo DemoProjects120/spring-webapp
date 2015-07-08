@@ -1,5 +1,7 @@
 package com.rootnext.webapp.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 /**
@@ -21,6 +23,7 @@ public class Product {
     String description;
 
     @ManyToOne(targetEntity = Category.class)
+    @JsonBackReference
     Category category;
 
     public Long getId() {
