@@ -20,6 +20,9 @@ public class Product {
     @Column(length = 1000)
     String description;
 
+    @ManyToOne(targetEntity = Category.class)
+    Category category;
+
     public Long getId() {
         return id;
     }
@@ -58,5 +61,13 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 }

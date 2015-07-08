@@ -1,4 +1,4 @@
-package com.rootnext.webapp.controllers;
+package com.rootnext.webapp.controllers.api;
 
 import com.rootnext.webapp.models.Product;
 import com.rootnext.webapp.models.repositories.ProductRepository;
