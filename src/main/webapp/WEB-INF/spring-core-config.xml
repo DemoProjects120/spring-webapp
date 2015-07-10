@@ -40,6 +40,9 @@
 
        <bean id="exceptionTranslation" class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
 
+       <bean id="testService" class="com.rootnext.webapp.services.TestService">
+              <constructor-arg name="number" value="124"></constructor-arg>
+       </bean>
 
        <jpa:repositories base-package="com.rootnext.webapp.models.repositories"/>
 </beans>

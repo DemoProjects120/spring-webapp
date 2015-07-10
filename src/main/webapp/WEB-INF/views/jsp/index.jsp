@@ -11,6 +11,8 @@
     <title>Hello World</title>
 </head>
 <body>
+<div>Testing...</div>
+<div>${msg}</div>
 
 </body>
 </html>
